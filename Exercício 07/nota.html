@@ -11,20 +11,20 @@
     <script>
         let nota = prompt("Digite a nota do aluno");
 
-        if (nota>=7){
-            console.log(`Sua nota é: ${nota}. Parabéns! Aprovado!`);
-            alert(`Sua nota é: ${nota}. Parabéns! Aprovado!`);
-            document.getElementById("nota").innerHTML = `Sua nota é: ${nota}. Parabéns! Aprovado!`
-        }
-        if (nota<7 && nota >= 5){
-            console.log(`Sua nota é: ${nota}. Você está de recuperação.`);
-            alert(`Sua nota é: ${nota}. Você está de recuperação.`);
-            document.getElementById("nota").innerHTML = `Sua nota é: ${nota}. Você está de recuperação.`
-        } else {
-            console.log(`Sua nota é: ${nota}. Reprovado!`);
-            alert(`Sua nota é: ${nota}. Reprovado!`);
-            document.getElementById("nota").innerHTML = `Sua nota é: ${nota}. Reprovado`
-        }
+        if (nota >= 7){
+        console.log(`Sua nota é: ${nota}. Parabéns! Aprovado!`);
+        alert(`Sua nota é: ${nota}. Parabéns! Aprovado!`);
+        document.getElementById("nota").innerHTML = `Sua nota é: ${nota}. Parabéns! Aprovado!`
+    }
+    else if (nota < 7 && nota >= 5){
+        console.log(`Sua nota é: ${nota}. Você está de recuperação.`);
+        alert(`Sua nota é: ${nota}. Você está de recuperação.`);
+        document.getElementById("nota").innerHTML = `Sua nota é: ${nota}. Você está de recuperação.`
+    } else {
+        console.log(`Sua nota é: ${nota}. Reprovado!`);
+        alert(`Sua nota é: ${nota}. Reprovado!`);
+        document.getElementById("nota").innerHTML = `Sua nota é: ${nota}. Reprovado`
+    }
     </script>
 </body>
 </html>
