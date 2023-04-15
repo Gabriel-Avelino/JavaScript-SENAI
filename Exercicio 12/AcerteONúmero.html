@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerte o número</title>
+</head>
+<body>
+    <h1 id="game"></h1>
+    <script>
+        let numero = Math.floor(Math.random()*100) + 1
+        let palpite;
+        let tentativas = 0;
+        do {
+            palpite = prompt ("Digite um número entre 1 e 100")
+            tentativas++;
+            /*
+            switch(palpite){
+                case palpite>numero:
+                    alert (`Digite um número menor`);
+                    console.log (`Digite um número menor`);
+                    document.getElementById ("game").innerHTML =`Digite um número menor`;
+                    break;
+                case palpite<numero:
+                    alert (`Digite um número maior`);
+                    console.log (`Digite um número maior`);
+                    document.getElementById ("game").innerHTML =`Digite um número maior`;
+                    break;
+                case palpite===numero:
+                    alert (`Parabéns! Você acertou na ${tentativas}ª tentativa`);
+                    console.log (`Parabéns! Você acertou na ${tentativas}ª tentativa`);
+                    document.getElementById ("game").innerHTML =`Parabéns! Você acertou na ${tentativas}ª tentativa`;
+                    break;
+                    
+            }
+            */
+           if(palpite > numero){
+                alert (`Digite um número menor`);
+                console.log (`Digite um número menor`);
+                document.getElementById ("game").innerHTML =`Digite um número menor`;
+           }else if (palpite < numero){
+                alert (`Digite um número maior`);
+                console.log (`Digite um número maior`);
+                document.getElementById ("game").innerHTML =`Digite um número maior`;
+           } else if (palpite == numero){
+                alert (`Parabéns! Você acertou na ${tentativas}ª tentativa`);
+                console.log (`Parabéns! Você acertou na ${tentativas}ª tentativa`);
+                document.getElementById ("game").innerHTML =`Parabéns! Você acertou na ${tentativas}ª tentativa`;
+           } else{
+                alert (`Erro`);
+                console.log (`Erro`);
+                document.getElementById ("game").innerHTML = `Erro`;
+           }
+        } while(palpite !=numero)
+    </script>
+</body>
+</html>

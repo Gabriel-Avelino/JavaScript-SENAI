@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Idade</title>
+</head>
+<body>
+    <h1 id="idade"></h1>
+    <script>
+        let nome;
+        let idade;
+        let MaiorIdade = 0;
+        let PessoaMaisVelha;
+        let i = 0;
+        do {
+            nome = prompt ("Digite seu nome");
+            idade = parseInt(prompt ("Digite sua idade"));
+
+            if (idade>MaiorIdade){
+                MaiorIdade = idade;
+                PessoaMaisVelha = nome;
+            } else {
+
+            };
+            i++;
+        }while (i<5);
+        alert(`${PessoaMaisVelha} tem ${MaiorIdade} anos, logo tem a maior idade.`);
+        console.log(`${PessoaMaisVelha} tem ${MaiorIdade} anos, logo tem a maior idade.`);
+        document.getElementById("idade").innerHTML = `${PessoaMaisVelha} tem ${MaiorIdade} anos, logo tem a maior idade.`;
+    </script>
+</body>
+</html>

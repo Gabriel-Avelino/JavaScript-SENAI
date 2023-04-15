@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <h1 id="game"></h1>
+    <script>
+        let nivel = prompt("Digite o nível de dificuldade");
+        let pontuacao = parseFloat(prompt("Digite a pontuação"));
+
+        switch (nivel){
+            case "Fácil":
+                pontuacao = pontuacao * 1
+                alert (`Sua pontuação é: ${pontuacao}`);
+                console.log (`Sua pontuação é: ${pontuacao}`);
+                document.getElementById ("game").innerHTML = `Sua pontuação é: ${pontuacao}`;
+                break;
+            case "Médio":
+                pontuacao = pontuacao * 2
+                alert (`Sua pontuação é: ${pontuacao}`);
+                console.log (`Sua pontuação é: ${pontuacao}`);
+                document.getElementById ("game").innerHTML = `Sua pontuação é: ${pontuacao}`;
+                break;
+            case "Difícil":
+                pontuacao = pontuacao * 3
+                alert (`Sua pontuação é: ${pontuacao}`);
+                console.log (`Sua pontuação é: ${pontuacao}`);
+                document.getElementById ("game").innerHTML = `Sua pontuação é: ${pontuacao}`;
+                break;
+            default: 
+                alert (`Erro`);
+                console.log (`Erro`);
+                document.getElementById ("game").innerHTML = `Erro`;
+                break;
+        }
+    </script>
+</body>
+</html>
