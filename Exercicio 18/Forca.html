@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forca</title>
+</head>
+<body>
+    <h2 id="letrasErradas"></h2>
+    <h2 id="letrasCertas"></h2>
+    <h1 id="palavra"></h1>
+    <script>
+        let palavra = prompt("Digite a palavra secreta").toUpperCase().split("");
+        let letrasErradas = [];
+        let letrasCertas = [];
+        let underline = [];
+        let i = 0;
+
+        do{
+            underline[i]= " _ ";
+            document.getElementById("palavra").innerHTML = underline.join(" ")
+            i++;
+        } while (i < palavra.length);
+    </script>
+</body>
+</html>

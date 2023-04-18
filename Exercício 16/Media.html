@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <h1 id="media"></h1>
+    <script>
+        let numero;
+        let media = 0;
+        let i = 0;
+
+        do {
+            numero = Math.floor(Math.random()*100) + 1;
+            console.log(numero);
+            media = media + numero;
+            i++;
+        }while(i<10);
+        console.log(`A média é: ${media/10}`);
+        alert(`A média é: ${media/10}`);
+        document.getElementById("media").innerHTML = `A média é: ${media/10}`;
+    </script>
+</body>
+</html>

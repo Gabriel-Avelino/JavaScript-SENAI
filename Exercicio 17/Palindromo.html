@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palíndromos</title>
+</head>
+<body>
+    <h1 id="palíndromo"></h1>
+    <script>
+        let palavra;
+        let palindromo;
+
+        do{
+            palavra = prompt("Digite uma palavra");
+
+            palindromo = palavra.split("").reverse().join("");
+
+            if(palavra==palindromo){
+                console.log(`${palavra} é um palíndromo.`);
+                alert(`${palavra} é um palíndromo.`);
+                document.getElementById("palíndromo").innerHTML = `${palavra} é um palíndromo.`;
+            } else if (palavra != palindromo){
+                console.log(`${palavra} não é um palíndromo.`);
+                alert(`${palavra} não é um palíndromo.`);
+                document.getElementById("palíndromo").innerHTML = `${palavra} não é um palíndromo.`;
+            } else{
+                console.log(`Digite uma palavra válida`);
+                alert(`Digite uma palavra válida`);
+                document.getElementById("palíndromo").innerHTML = `Digite uma palavra válida`;
+            }
+        }while(palavra != palindromo)
+    </script>
+</body>
+</html>
