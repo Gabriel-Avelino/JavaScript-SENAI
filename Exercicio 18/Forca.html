@@ -11,17 +11,37 @@
     <h2 id="letrasCertas"></h2>
     <h1 id="palavra"></h1>
     <script>
-        let palavra = prompt("Digite a palavra secreta").toUpperCase().split("");
-        let letrasErradas = [];
-        let letrasCertas = [];
-        let underline = [];
-        let i = 0;
+        let palavra = prompt("Digite a palavra secreta").toUpperCase();
+        let tamanhoPalavra = palavra.length;
+
+        let letrasCertas="";
+        let letrasErradas = "";
+        let letrasChutadas = "";
+        let letras ="";
+        
+
+        for (let i = 0; i< tamanhoPalavra; i++){
+            letrasCertas+= "_";
+        } 
+
+        let tentativas = 0;
+        let maxTentativas = 6;
 
         do{
-            underline[i]= " _ ";
-            document.getElementById("palavra").innerHTML = underline.join(" ")
-            i++;
-        } while (i < palavra.length);
+            alert("Palavra: " + letrasCertas + "\n Letras já Chutadas: " + letrasChutadas + "\n Letras erradas: " + letrasErradas + "\n Tentativas: " + tentativas);
+            letras = prompt ("Digite uma letra").toUpperCase();
+
+            if(letras == letrasChutadas.includes()){
+                alert("Você já usou essa letra")
+            }else{
+                letrasChutadas +=letras;
+                if(letra == palavra.includes()){
+                    for(let j=0; j<tamanhoPalavra; j++){
+                        
+                    }
+                }
+            }
+        }while(tentativas<maxTentativas || letrasCertas != palavra);
     </script>
 </body>
 </html>
