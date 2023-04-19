@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forca</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="title">Jogo da Forca</h1>
+    <h2 id="letrasCertas"></h2>
+    <h2 id="palavraSecreta"></h2>
+    <form id="game">
+        <input type="text" name= "palavra" id="palavra" placeholder="Digite a palavra secreta: " autocomplete="off">
+        <input type="submit" value="Enviar">
+    </form>
+    <h2 id="play">
+        <div id="box"></div>
+    </h2>
+    <script>
+        let game = document.getElementById('game');
+        let palavraDigitada = document.getElementById('palavra');
+        let letraDigitada = document.getElementById('letra')
+        let palavra;
+        let box = document.getElementById("box");
+
+        function ocultar(){
+            let oculto = document.getElementById("palavra");
+            if(oculto.type === "text"){
+                oculto.type="password"
+            }
+        }
+
+        function createInput(){
+            let elemento = document.createElement('input');
+            elemento.setAttribute('type','text');
+            elemento.setAttribute('name','letra');
+            elemento.setAttribute('id','letra');
+            elemento.setAttribute('placeholder','Digite uma letra: ');
+            elemento.setAttribute('autocomplete','off');
+
+            box.appendChild(elemento);
+        }
+
+        game.addEventListener('submit', function(e){
+            palavra = palavraDigitada.value.toUpperCase();
+            ocultar();
+            e.preventDefault();
+            console.log(palavra)
+        
+            let tamanhoPalavra = palavra.length;
+            let letrasCertas= "";
+            let letrasErradas = "";
+            let letrasChutadas = "";
+            createInput();
+
+            for (let i = 0; i< tamanhoPalavra; i++){
+                letrasCertas+= "_";
+            } 
+
+            let tentativas = 0;
+            let maxTentativas = 6;
+            
+            while(letrasCertas !== palavra && tentativas<maxTentativas){
+                document.getElementById("play").innerHTML= `Palavra: ${letrasCertas} \n Letras já Chutadas: ${letrasChutadas} \n Letras erradas: ${letrasErradas} \n Tentativas: ${tentativas} \n Digite uma letra: `;
+                let letras = prompt ("Digite uma letra").toUpperCase();
+
+                if(letrasChutadas.includes(letras)){
+                    alert("Você já usou essa letra");
+                }else{
+                    letrasChutadas += letras;
+
+                    if(palavra.includes(letras)){
+                        for(let j=0; j<tamanhoPalavra; j++){
+                            if(palavra[j]=== letras){
+                                letrasCertas = letrasCertas.substring(0, j) + letras + letrasCertas.substring(j + 1);
+                            }
+                        }
+                    }
+                    else {
+                    letrasErradas += letras;
+                    tentativas++;
+                }
+                }
+            }
+
+            if (letrasCertas === palavra) {
+            alert("Parabéns, você acertou a palavra secreta: " + palavra);
+            }
+            else {
+            alert("Fim de jogo. A palavra secreta era: " + palavra);
+            }
+        })
+    </script>
+</body>
+</html>

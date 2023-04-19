@@ -24,27 +24,8 @@
         let tentativas = 0;
         let maxTentativas = 6;
 
-        while(letrasCertas !== palavra && tentativas<maxTentativas){
-            alert("Palavra: " + letrasCertas + "\n Letras já Chutadas: " + letrasChutadas + "\n Letras erradas: " + letrasErradas + "\n Tentativas: " + tentativas);
-            let letras = prompt ("Digite uma letra").toUpperCase();
-
-            if(letrasChutadas.includes(letras)){
-                alert("Você já usou essa letra");
-            }else{
-                letrasChutadas += letras;
-
-                if(palavra.includes(letras)){
-                    for(let j=0; j<tamanhoPalavra; j++){
-                        if(palavra[j]=== letras){
-                            letrasCertas = letrasCertas.substring(0, j) + letras + letrasCertas.substring(j + 1);
-                        }
-                    }
-                }
-                else {
-                letrasErradas += letras;
-                tentativas++;
-            }
-            }
+        while(tentativas<maxTentativas){
+            let letras = prompt (`Palavra: ${letrasCertas} \n Letras já Chutadas: ${letrasChutadas} \n Letras erradas: ${letrasErradas} \n Tentativas: ${tentativas} \n Digite uma letra: `).toUpperCase();
         }
 
         if (letrasCertas === palavra) {

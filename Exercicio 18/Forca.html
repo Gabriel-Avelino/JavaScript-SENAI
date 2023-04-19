@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
     <title>Forca</title>
 </head>
 <body>
-    <h1>Jogo da Forca</h1>
-    <input type="text" name="palavra" placeholder="Digite a palavra secreta">
+    <h2 id="letrasErradas"></h2>
+    <h2 id="letrasCertas"></h2>
+    <h1 id="palavra"></h1>
     <script>
         let palavra = prompt("Digite a palavra secreta: ").toUpperCase();
 
@@ -27,7 +27,7 @@
         let maxTentativas = 6;
 
         while(letrasCertas !== palavra && tentativas<maxTentativas){
-            alert("Palavra: " + letrasCertas + "\n Letras já Chutadas: " + letrasChutadas + "\n Letras erradas: " + letrasErradas + "\n Tentativas: " + tentativas);
+            alert(`Palavra: ${letrasCertas} \n Letras já Chutadas: ${letrasChutadas} \n Letras erradas: ${letrasErradas} \n Tentativas: ${tentativas} \n Digite uma letra: `);
             let letras = prompt ("Digite uma letra").toUpperCase();
 
             if(letrasChutadas.includes(letras)){
